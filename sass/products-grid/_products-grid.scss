@@ -1,0 +1,78 @@
+.products-grid{
+	position: relative;
+	padding-bottom: 0.75rem;
+
+	@include medium-up{
+		padding-bottom: 1.125rem;
+	}
+
+	&:first-child{
+		padding-top: 1.75rem;
+	}
+
+	h2:after{
+		content: '';
+		width: 20px;
+		height: 20px;
+		display: block;
+		position: absolute;
+		right: -1.75rem;
+		top: 0.625rem;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
+
+		@include phone-up{
+			width: 24px;
+			height: 24px;
+			right: -2rem;
+			top: 0.5rem;
+			background-size: 24px 24px;
+		}
+		@include medium-up{
+			width: 28px;
+			height: 28px;
+			right: -2.5rem;
+			top: 0.425rem;
+			background-size: 28px 28px;
+		}
+		@include tablet-up{
+			width: 32px;
+			height: 32px;
+			right: -2.75rem;
+			top: 0.325rem;
+			background-size: 32px 32px;
+		}
+	}
+
+	&.last-minute h2:after{
+		background-image: url('../img/svg/icon-stopwatch.svg');
+	}
+	&.hot-bids h2:after{
+		background-image: url('../img/svg/icon-hot.svg');
+	}
+	&.new-products h2:after{
+		background-image: url('../img/svg/icon-star.svg');
+	}
+
+
+	& .columns:first-of-type article{
+		-webkit-animation-delay: 0.2s;
+		-moz-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+	}
+	& .columns:nth-of-type(2) article{
+		-webkit-animation-delay: 0.4s;
+		-moz-animation-delay: 0.4s;
+		animation-delay: 0.4s;
+	}
+	& .columns:nth-of-type(3) article{
+		-webkit-animation-delay: 0.6s;
+		-moz-animation-delay: 0.6s;
+		animation-delay: 0.6s;
+	}
+
+
+	@import "products-grid/products-grid-header";
+	@import "products-grid/products-grid-item";
+}

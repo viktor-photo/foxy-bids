@@ -1,0 +1,47 @@
+.contact-form{
+	position: relative;
+
+	form{
+		padding: 1.5rem;
+		background: #eee;
+		display: block;
+		margin-bottom: 1.5rem;
+		border-radius: 5px;
+		border-bottom: 3px solid darken($light-grey, 3%);
+
+		@include transition(all, 0.25s);
+		
+		@include medium-up{
+			margin-bottom: 2rem;
+		}
+
+		@include tablet-up{
+			margin-bottom: 2.5rem;
+		}
+
+		label{
+			height: auto;
+			display: block;
+			vertical-align: middle;
+			line-height: 1.25em;
+			font-size: 0.875rem;
+			margin-bottom: 1rem;
+
+			@include medium-up{
+				margin: 0;
+				height: 40px;
+				display: table-cell;
+			}
+
+			@include tablet-up{
+				font-size: 0.9375rem;
+			}	
+		}
+
+		input, .button{
+			@include medium-up{
+				margin: 0;
+			}	
+		}
+	}	
+}	

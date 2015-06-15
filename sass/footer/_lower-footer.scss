@@ -1,0 +1,60 @@
+.lower-footer{
+	position: relative;
+	background-color: #e84e04;
+	color: #fff;
+	padding: 20px 0;
+
+	span, a{
+		color: $white;
+		line-height: 1.25em;
+		font-size: 0.75rem;
+
+		@include medium-up{
+			font-size: 0.875rem;
+		}		
+	}
+	
+	span a {
+		display: inline-block;
+		border-bottom: 1px solid $white;
+		font-weight: 700;
+	}
+
+	ul{
+		list-style: none;
+
+		@include up-to-medium{
+			padding-top: 5px;
+		}
+
+		li{
+			display: inline-block;
+			padding-left: 4px;
+			margin-left: 2px;
+			border-left: 1px solid $white;
+			line-height: 0.75em;
+			height: 1em;
+
+			@include phone-up{
+				padding-left: 10px;
+				margin-left: 10px;
+			}
+
+			&:first-child{
+				padding: 0;
+				margin-left: 0;
+				border: none;
+
+				@include phone-up{
+					padding: 0;
+					margin-left: 0;
+					border: none;
+				}
+			}
+
+			a{
+				font-weight: 700;
+			}
+		}
+	}
+}

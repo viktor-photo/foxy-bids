@@ -1,0 +1,32 @@
+header{
+	position: relative;
+	background-color: #111;
+	color: #fff;
+	padding: 0.5rem 0;
+
+	@include medium-up{
+		padding: 1rem 0;
+	}
+	
+	.logo{
+		display: inline-block;
+		width: 150px;
+
+		@include transition(all, 0.2s);
+
+		@include medium-up{
+			width: auto;
+		}
+
+		@include desktop-up{
+			margin-left: 2rem;
+		}
+
+		img{
+			display: block;
+			position: relative;
+		}
+	}
+
+	@import "header/nav";
+}

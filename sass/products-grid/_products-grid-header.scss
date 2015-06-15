@@ -1,0 +1,89 @@
+.header{
+	position: relative;
+	margin-bottom: 2rem;
+	display: block;
+	border-bottom: 7px solid #ccc;
+
+	h2{
+		float: left;
+		line-height: 40px;
+		font-size: 18px;
+		font-weight: 700;
+		position: relative;
+		margin-bottom: 0.375em;
+
+		@include phone-up{
+			font-size: 24px;
+		}
+
+		@include tablet-up{
+			font-size: 30px;
+		}
+
+		@include desktop-up{
+			font-size: 40px;
+		}
+
+		&:before{
+			content: '';
+			height: 7px;
+			width: 100%;
+			display: block;
+			position: absolute;
+			bottom: -0.875rem;
+			background: $orange;
+
+			-webkit-animation: 	ribbonWidth 1s ease-in-out 0.5s both;
+			-moz-animation: 	ribbonWidth 1s ease-in-out 0.5s both;
+			-ms-animation: 		ribbonWidth 1s ease-in-out 0.5s both;
+			animation: 			ribbonWidth 1s ease-in-out 0.5s both;
+
+			@include transition(all, 0.25s);
+
+			@include phone-up{
+				bottom: -1rem;
+			}
+
+			@include tablet-up{
+				bottom: -1.175rem;
+			}
+
+			@include desktop-up{
+				bottom: -1.375rem;
+			}
+
+			@-webkit-keyframes ribbonWidth {
+				0% {width: 0%}
+				75%{width: 110%;}
+				100% {width: 100%;}
+			}
+			@-moz-keyframes ribbonWidth {
+				0% {width: 0%}
+				75%{width: 120%;}
+				100% {width: 100%;}
+			}
+			@-ms-keyframes ribbonWidth {
+				0% {width: 0%}
+				75%{width: 120%;}
+				100% {width: 100%;}
+			}
+			@keyframes ribbonWidth {
+				0% {width: 0%}
+				75%{width: 120%;}
+				100% {width: 100%;}
+			}
+		}
+	}
+
+	.button{
+		float: right;
+
+		@include up-to-tablet{
+			font-size: 0.625rem;
+			line-height: 31px;
+			height: 30px;
+			padding: 0 0.5rem;
+			margin-top: 5px;
+		}
+	}
+}

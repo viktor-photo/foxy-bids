@@ -1,0 +1,7 @@
+footer{
+	position: relative;
+
+	@import "footer/footer-nav";
+	@import "footer/lower-footer";
+	@import "footer/bottom-nav";
+}	

@@ -1,0 +1,11 @@
+.main-carousel{
+	position: relative;
+	min-height: 240px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+
+	@include medium-up{
+		padding-bottom: 100px;
+	}
+}

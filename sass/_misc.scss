@@ -130,3 +130,60 @@ form{
 		border: 1px solid $light-grey;
 	}
 }
+
+
+.pagination-wrap{
+	position: relative;
+	display: block;
+	text-align: center;
+	margin-bottom: 2rem;
+
+	.pagination{
+		a:hover{
+			background-color: #f5f5f5;
+		}
+	}
+}
+
+
+
+.featured,
+.popular,
+.last-one{
+	overflow: hidden;
+
+	&:before{
+		text-transform: uppercase;
+		background-color: #333;
+		color: #fff;
+		font-size: 0.575rem;
+		font-weight: 700;
+		width: auto;
+		height: auto;
+		position: absolute;
+		top: -8px;
+		right: -50px;
+		pointer-events: none;
+		z-index: 5;
+		padding: 2rem 3rem 0.75rem;
+
+		@include rotate(45deg);
+		@include transition(background-color, 0.2s);
+	}
+
+	&:hover{
+		&:before{
+			background-color: $orange;
+		}
+	}
+}
+
+.featured:before{
+	content: 'featured';
+}
+.popular:before{
+	content: 'popular';
+}
+.last-one:before{
+	content: 'last one';
+}

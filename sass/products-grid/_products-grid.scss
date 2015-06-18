@@ -1,6 +1,7 @@
 .products-grid{
 	position: relative;
 	padding-bottom: 0.75rem;
+	overflow: hidden;
 
 	@include medium-up{
 		padding-bottom: 1.125rem;
@@ -47,12 +48,30 @@
 
 	&.last-minute h2:after{
 		background-image: url('../img/svg/icon-stopwatch.svg');
+		opacity: 0;
+		outline:1px solid transparent;
+		-webkit-animation: 	grow 0.2s ease-out 1s both;
+		-moz-animation: 	grow 0.2s ease-out 1s both;
+		-ms-animation: 		grow 0.2s ease-out 1s both;
+		animation: 			grow 0.2s ease-out 1s both;
 	}
 	&.hot-bids h2:after{
 		background-image: url('../img/svg/icon-hot.svg');
+		opacity: 0;
+		outline:1px solid transparent;
+		-webkit-animation: 	grow 0.2s ease-out 1.25s both;
+		-moz-animation: 	grow 0.2s ease-out 1.25s both;
+		-ms-animation: 		grow 0.2s ease-out 1.25s both;
+		animation: 			grow 0.2s ease-out 1.25s both;
 	}
 	&.new-products h2:after{
 		background-image: url('../img/svg/icon-star.svg');
+		opacity: 0;
+		outline:1px solid transparent;
+		-webkit-animation: 	grow 0.2s ease-out 1.5s both;
+		-moz-animation: 	grow 0.2s ease-out 1.5s both;
+		-ms-animation: 		grow 0.2s ease-out 1.5s both;
+		animation: 			grow 0.2s ease-out 1.5s both;
 	}
 
 
@@ -72,6 +91,26 @@
 		animation-delay: 0.6s;
 	}
 
+
+	@include medium-only{
+		.columns > .row{
+			margin: 0 -0.5em;
+		}
+		.columns > .row > .columns{
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+	}
+
+	@include tablet-only{
+		.columns > .row{
+			margin: 0 -0.875em;
+		}
+		.columns > .row > .columns{
+			padding-left: 0.875em;
+			padding-right: 0.875em;
+		}
+	}
 
 	@import "products-grid/products-grid-header";
 	@import "products-grid/products-grid-item";

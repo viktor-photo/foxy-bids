@@ -5,9 +5,9 @@
 	bottom: 0;
 	left: 0;
 	display: block;
-	z-index: 1;
-	background-color: rgba(0,0,0,0.925);
-	
+	z-index: 10;
+	background-color: rgba(0,0,0,0.9);
+
 	opacity: 0;
 	visibility: hidden;
 
@@ -18,25 +18,53 @@
 	&.active{
 		opacity: 1;
 		visibility: visible;
+
+		&:before,
+		&:after{
+			content: '';
+			width: 30px;
+			height: 5px;
+			display: block;
+			position: absolute;
+			top: 2.625rem;
+			right: 1.375rem;
+			cursor: pointer;
+			background-color: #fff;
+			outline: 5px solid transparent;
+			z-index: 1;
+
+			@include medium-up{
+				display: none;
+			}
+		}
+
+		&:before{
+			@include rotate(45deg);
+		}
+
+		&:after{
+			@include rotate(-45deg);
+		}
 	}
+
 
 	@include medium-up{
 		position: relative;
 		opacity: 1;
 		visibility: visible;
-		background-color: rgba(0,0,0,0.75);
+		background-color: rgba(0,0,0,0.5);
 	}
 
 	nav{
 		position: relative;
 		display: block;
-		padding-top: 1rem;
+		padding-top: 3.5rem;
 
 		@include medium-up{
 			display: table;
 			width: 100%;
 			padding-top: 0;
-		}	
+		}
 
 		a{
 			color: #fff;
@@ -65,8 +93,16 @@
 
 			&:hover,
 			&.active{
-				background-color: rgba(0,0,0,0.25);
+				background-color: rgba(0,0,0,0.325);
 			}
 		}
+	}
+}
+
+
+.main-carousel + .main-nav{
+	@include medium-up{
+		position: relative;
+		margin: -90px 0 10px;
 	}
 }

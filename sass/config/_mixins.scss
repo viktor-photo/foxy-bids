@@ -42,7 +42,7 @@
 
 // Smartphones layout
 @mixin up-to-phone{
-	@media (max-width: #{$width-phone}) {
+	@media (max-width: #{$width-phone - 1px}) {
 		@content;
 	}
 }

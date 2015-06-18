@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5{
-	font-weight: 400;
+	font-weight: 500;
 	font-family: $font-stack;
 	line-height: 1.2em;
 	margin: 0 0 0.5em;
@@ -9,21 +9,20 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-	font-size: 1rem;
-	font-weight: 300;
-	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 700;
 
 	@include phone-up{
-		font-size: 20px;
+		font-size: 22px;
 	}
 	@include medium-up{
-		font-size: 24px;
+		font-size: 26px;
 	}
 	@include tablet-up{
-		font-size: 28px;
+		font-size: 30px;
 	}
 	@include desktop-up{
-		font-size: 32px;
+		font-size: 34px;
 	}
 	@include wide-up{
 		font-size: 40px;

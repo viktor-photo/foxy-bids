@@ -1,0 +1,80 @@
+.breadcrumbs {
+	display: block;
+	list-style: none;
+	margin-left: 0;
+	overflow: hidden;
+	padding: 1rem 0.625rem;
+
+	@include phone-up{
+		padding: 1.5rem 0.625rem;
+	}
+
+	@include medium-up{
+		padding: 2rem 0.625rem;
+	}
+
+	& > * {
+		color: #333;
+		float: left;
+		font-family: 'Museo Sans';
+		font-size: 0.75rem;
+		line-height: 1.5em;
+		font-weight: 500;
+		margin: 0;
+
+		@include phone-up{
+			font-size: 0.875rem;
+		}
+
+		@include medium-up{
+			font-size: 0.9375rem;
+		}
+	}
+	
+	& > *:hover a,
+	& > *:focus a {
+		border-bottom: 1px solid #ff4f1a;
+		color: #ff4f1a;
+		line-height: 1.5em;
+	}
+	
+	& > * a {
+		color: #333;
+		line-height: 1.5em;
+		font-weight: 700; 
+		border-bottom: 1px solid #333;
+	}
+	
+	& > *.current {
+		cursor: default;
+	}
+	
+	& > *.current a {
+		cursor: default;
+		color: #666;
+		pointer-events: none;
+		text-decoration: none; 
+		border-bottom: none;
+		font-weight: 500; 
+	}
+	
+	& > *.current:hover, 
+	& > *.current:hover a,
+	& > *.current:focus,
+	& > *.current:focus a {
+		text-decoration: none; 
+		color: #666;
+	}
+	
+	& > *:before {
+		color: #ff4f1a;
+		content: '»';
+		margin: 0 0.375rem;
+		position: relative;
+	}
+	
+	& > *:first-child:before {
+		content: " ";
+		margin: 0; 
+	}
+}  

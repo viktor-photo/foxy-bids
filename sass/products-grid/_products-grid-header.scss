@@ -32,11 +32,12 @@
 			position: absolute;
 			bottom: -0.875rem;
 			background: $orange;
+			z-index: 1;
 
-			-webkit-animation: 	ribbonWidth 1s ease-in-out 0.5s both;
-			-moz-animation: 	ribbonWidth 1s ease-in-out 0.5s both;
-			-ms-animation: 		ribbonWidth 1s ease-in-out 0.5s both;
-			animation: 			ribbonWidth 1s ease-in-out 0.5s both;
+			-webkit-animation: 	ribbonWidth 0.75s ease-in-out 0.5s both;
+			-moz-animation: 	ribbonWidth 0.75s ease-in-out 0.5s both;
+			-ms-animation: 		ribbonWidth 0.75s ease-in-out 0.5s both;
+			animation: 			ribbonWidth 0.75s ease-in-out 0.5s both;
 
 			@include transition(all, 0.25s);
 
@@ -59,17 +60,17 @@
 			}
 			@-moz-keyframes ribbonWidth {
 				0% {width: 0%}
-				75%{width: 120%;}
+				75%{width: 110%;}
 				100% {width: 100%;}
 			}
 			@-ms-keyframes ribbonWidth {
 				0% {width: 0%}
-				75%{width: 120%;}
+				75%{width: 110%;}
 				100% {width: 100%;}
 			}
 			@keyframes ribbonWidth {
 				0% {width: 0%}
-				75%{width: 120%;}
+				75%{width: 110%;}
 				100% {width: 100%;}
 			}
 		}
@@ -77,6 +78,31 @@
 
 	.button{
 		float: right;
+
+		@include up-to-phone{
+			padding: 0!important;
+			background-color: transparent;
+			border: none;
+			text-indent: 100%;
+			display: block;
+			color: transparent;
+			white-space: nowrap;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			&:before{
+				content:'';
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				background: url('../img/svg/icon-show-more.svg') no-repeat center center transparent;
+				background-size: 20px 15px;
+			}
+		}
 
 		@include up-to-tablet{
 			font-size: 0.625rem;

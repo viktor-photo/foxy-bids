@@ -12,6 +12,7 @@ var App = {
 		this.bg();							// Set background image to element from data attr
 		this.fpSlider();					// Frontpage slider init
 		this.pGrid();						// Fix for product grid
+		this.modal();						// Modal
 	},
 
 	// Equal heights divs
@@ -224,6 +225,47 @@ var App = {
 		if($('.products-grid').length){
 			$('.products-grid').each(function() {
 				$(this).find('.header + .row .columns:last-child').addClass('end');
+			});
+		}
+	},
+
+
+	// Modal
+	modal: function(){
+
+		var modalLink = $('a[data-modal]'),
+			modalBody = $(".modal-box");
+
+		if(modalLink.length){
+
+			$("body > footer").after("<div class='modal-overlay'></div>");
+			modalBody.append("<a href='#' class='modal-close'>×</a>");
+
+			var overlay = $('.modal-overlay');
+
+			modalLink.click(function(e) {
+				e.preventDefault();
+				var modalBox = $(this).attr('data-modal');
+
+				if(modalBody.hasClass('active')) {
+					modalBody.removeClass('active');
+				}
+
+				$('#'+ modalBox).addClass('active');
+				overlay.addClass('active');
+			});
+
+			$(".modal-close, .close").click(function(e) {
+				e.preventDefault();
+				modalBody.removeClass('active');
+				overlay.removeClass('active');
+			});
+
+			overlay.on('click', function(e){
+				if(!$(e.target).is(modalBody)){
+					modalBody.removeClass('active');
+					overlay.removeClass('active');
+				}
 			});
 		}
 	}

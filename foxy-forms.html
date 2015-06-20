@@ -98,7 +98,7 @@
 										<div class="field">
 											<textarea placeholder="Placeholder text"></textarea>
 										</div>
-										<button type="submit" class="button right">Submit</button>
+										<button type="submit" class="button right" data-modal="popup-1">Submit</button>
 									</form>
 								</div>
 								<div class="small-12 medium-6 columns">
@@ -115,19 +115,31 @@
 													<option value="val-4">Test option 4</option>
 												</select>
 											</div>
-											<div class="small-6 columns">
+											<div class="small-12 medium-6 columns">
 												<input type="checkbox" id="check-1" name="">
 												<label for="check-1">Checkbox</label>
 
 												<input type="checkbox" id="check-2" name="">
 												<label for="check-2">Checkbox</label>
 											</div>
-											<div class="small-6 columns">
+											<div class="small-12 medium-6 columns">
 												<input type="radio" id="radio-1" name="radio">
 												<label for="radio-1">Radio button</label>
 
 												<input type="radio" id="radio-2" name="radio">
 												<label for="radio-2">Radio button</label>
+											</div>
+										</div>
+										<div class="row">											
+											<div class="small-12 medium-6 columns">
+												<div class="field">
+													<a href="#" class="button expand" data-modal="popup-1">Success</a>
+												</div>	
+											</div>
+											<div class="small-12 medium-6 columns">
+												<div class="field">
+													<a href="#" class="button expand" data-modal="popup-2">Error</a>
+												</div>	
 											</div>
 										</div>
 									</form>
@@ -191,6 +203,26 @@
 				</div>
 			</section>
 		</footer>
+
+		<!-- Modal box -->
+		<div id="popup-1" class="modal-box no-close-btn">
+			<div class="modal-body clearfix">
+				<h3 class="text-center">Success!</h3>
+				<span class="icon-success"></span>
+				<p class="text-center">Lorem ipsum dolor sit amet, consectetur<br />adipisicing elit autem praesentium.</p>
+				<p class="text-center"><a href="#" class="button close" title="">Back</a></p>
+			</div>
+		</div>
+
+		<!-- Modal box -->
+		<div id="popup-2" class="modal-box no-close-btn">
+			<div class="modal-body clearfix">
+				<h3 class="text-center">Error Message!</h3>
+				<span class="icon-error"></span>
+				<p class="text-center">Lorem ipsum dolor sit amet, consectetur<br />adipisicing elit autem praesentium.</p>
+				<p class="text-center"><a href="#" class="button close" title="">Back</a></p>
+			</div>
+		</div>
 
 		<script src="js/vendor/jquery.js"></script>
 		<script src="js/vendor/stylish-select.js"></script>

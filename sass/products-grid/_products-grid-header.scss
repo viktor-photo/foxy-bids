@@ -78,6 +78,7 @@
 
 	.button{
 		float: right;
+		font-size: 0.75rem;
 
 		@include up-to-phone{
 			padding: 0!important;

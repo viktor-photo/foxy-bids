@@ -4344,10 +4344,10 @@ form input[type="checkbox"] + label:after {
   -moz-transform: scale(0.25) rotate(45deg);
   -ms-transform: scale(0.25) rotate(45deg);
   transform: scale(0.25) rotate(45deg);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 form input[type="checkbox"]:checked + label:after {
   opacity: 1;
@@ -4355,10 +4355,10 @@ form input[type="checkbox"]:checked + label:after {
   -moz-transform: scale(1) rotate(45deg);
   -ms-transform: scale(1) rotate(45deg);
   transform: scale(1) rotate(45deg);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 form input[type="radio"] + label:before {
   content: '';
@@ -4389,10 +4389,10 @@ form input[type="radio"] + label:after {
   -moz-transform: scale(0.25);
   -ms-transform: scale(0.25);
   transform: scale(0.25);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 form input[type="radio"]:checked + label:after {
   opacity: 1;
@@ -4400,10 +4400,10 @@ form input[type="radio"]:checked + label:after {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 form .field {
   position: relative;
@@ -4459,22 +4459,16 @@ form .field.not-valid .error {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
-  left: 105%;
+  left: 104%;
   top: 50%;
-  opacity: 0;
-  visibility: hidden;
   font-size: 0.875rem;
   padding: 0.75rem 1.25rem;
   line-height: 1.25rem;
   border-radius: 5px;
-  -webkit-transform: translate3d(20px, -50%, 0);
-  -moz-transform: translate3d(20px, -50%, 0);
-  -ms-transform: translate3d(20px, -50%, 0);
-  transform: translate3d(20px, -50%, 0);
-  -webkit-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
 }
 form .field.not-valid .error:before {
   content: '';
@@ -4506,33 +4500,6 @@ form .field.not-valid .error:before {
     transform: translate3d(0, 0, 0);
   }
   form .field.not-valid .error:before {
-    display: none;
-  }
-}
-form .field.not-valid:hover .error {
-  left: 104%;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translate3d(0, -50%, 0);
-  -moz-transform: translate3d(0, -50%, 0);
-  -ms-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0);
-}
-@media (max-width: 640px) {
-  form .field.not-valid:hover .error {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    left: 0;
-    top: 0;
-    border-radius: 0 0 5px 5px;
-    max-width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  form .field.not-valid:hover .error:before {
     display: none;
   }
 }

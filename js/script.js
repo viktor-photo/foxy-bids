@@ -23,6 +23,7 @@ var App = {
 				rowDivs = new Array(),
 				$el,
 				topPosition = 0;
+
 			$(container).each(function() {
 
 				$el = $(this);
@@ -79,6 +80,13 @@ var App = {
 					}
 					$('.bids-num-outer .selectedTxt').html('<b>' + word.substring(0, index) + '</b>' + word.substring(index, word.length));
 				});
+		}
+
+		if($('select.sSelect').length){
+			$('select.sSelect').sSelect();
+			setTimeout(function() {
+				$('select.sSelect').next().addClass('sSelect');
+			}, 10);
 		}
 
 		// Hack for styling of first letter inside of stylish select
@@ -214,12 +222,10 @@ var App = {
 	pGrid: function(){
 
 		if($('.products-grid').length){
-
 			$('.products-grid').each(function() {
 				$(this).find('.header + .row .columns:last-child').addClass('end');
 			});
 		}
-
 	}
 };
 
@@ -227,4 +233,3 @@ var App = {
 $(function(){
 	App.init();
 });
-

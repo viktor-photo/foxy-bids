@@ -81,6 +81,21 @@ hr, .hr{
 		padding: 0 0.5rem;
 	}
 
+	&.large{
+
+		@include tablet-up{
+			height: 55px;
+			line-height: 57px;
+			font-size: 1rem;
+		}
+
+		@include desktop-up{
+			height: 70px;
+			line-height: 72px;
+			font-size: 1.5rem;
+		}
+	}
+
 	@include transition(all, 0.15s);
 
 	&:hover,
@@ -102,8 +117,20 @@ hr, .hr{
 }
 
 
+::-webkit-input-placeholder { color:#333; }
+::-moz-placeholder { color:#333; }
+:-ms-input-placeholder { color:#333; }
+input:-moz-placeholder { color:#333; }
+
 form{
 	position: relative;
+
+	button.button{
+		line-height: 42px;
+		height: 40px;
+		font-size: 1rem;
+		padding: 0 2rem;
+	}
 
 	input[type="text"],
 	input[type="email"],
@@ -112,13 +139,19 @@ form{
 	input[type="phone"]{
 		line-height: 40px;
 		height: 40px;
-		border: 1px solid $white;
-		padding-bottom: 0;
-		padding-top: 0;
+		color: #333;
+		border-radius: 5px;
+		border: 1px solid #e5e5e5;
+		background-color: #eee;
+		padding: 0 1rem;
 	}
 
 	textarea{
-		border: 1px solid $white;
+		border: 1px solid #e5e5e5;
+		background-color: #eee;
+		min-height: 150px;
+		border-radius: 5px;
+		color: #333;
 	}
 
 	input[type="text"]:focus,
@@ -127,7 +160,227 @@ form{
 	input[type="date"]:focus,
 	input[type="phone"]:focus,
 	textarea:focus{
-		border: 1px solid $light-grey;
+		border: 1px solid #e5e5e5;
+		background-color: #eee;
+	}
+
+	/* Custom Checkboxes & Radio buttons */
+	input[type="checkbox"],
+	input[type="radio"] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	input[type="checkbox"] + label,
+	input[type="radio"] + label {
+		position: relative;
+		display: block;
+		line-height: 26px;
+		font-size: 14px;
+		padding-left: 35px;
+		margin: 0 0 1.25rem;
+
+		@include tablet-up{
+			font-size: 1rem;
+		}
+	}
+
+	input[type="checkbox"] + label:before {
+		content: '';
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		display: block;
+		border-radius: 3px;
+		position: absolute;
+		background: #eee;
+		box-shadow: 0 0 0 1px #e5e5e5 inset;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+	}
+
+	input[type="checkbox"] + label:after {
+		content: '';
+		width: 10px;
+		height: 18px;
+		display: block;
+		position: absolute;
+		left: 8px;
+		top: 1px;
+		border-bottom: 3px solid $orange;
+		border-right: 3px solid $orange;
+		opacity: 0;
+		-webkit-transform: 	scale(0.25) rotate(45deg);
+		-moz-transform: 	scale(0.25) rotate(45deg);
+		-ms-transform: 		scale(0.25) rotate(45deg);
+		transform: 			scale(0.25) rotate(45deg);
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: 	all 0.1s ease-in-out;
+		-ms-transition: 	all 0.1s ease-in-out;
+		transition: 		all 0.1s ease-in-out;
+	}
+
+	input[type="checkbox"]:checked + label:after {
+		opacity: 1;
+		-webkit-transform: 	scale(1) rotate(45deg);
+		-moz-transform: 	scale(1) rotate(45deg);
+		-ms-transform: 		scale(1) rotate(45deg);
+		transform: 			scale(1) rotate(45deg);
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: 	all 0.1s ease-in-out;
+		-ms-transition: 	all 0.1s ease-in-out;
+		transition: 		all 0.1s ease-in-out;
+	}
+
+	input[type="radio"] + label:before {
+		content: '';
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		display: block;
+		border-radius: 50%;
+		position: absolute;
+		background: #eee;
+		box-shadow: 0 0 0 1px #e5e5e5 inset;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+	}
+
+	input[type="radio"] + label:after {
+		content: '';
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		display: block;
+		position: absolute;
+		left: 6px;
+		top: 6px;
+		background: $orange;
+		opacity: 0;
+		-webkit-transform: 	scale(0.25);
+		-moz-transform: 	scale(0.25);
+		-ms-transform: 		scale(0.25);
+		transform: 			scale(0.25);
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: 	all 0.1s ease-in-out;
+		-ms-transition: 	all 0.1s ease-in-out;
+		transition: 		all 0.1s ease-in-out;
+	}
+
+	input[type="radio"]:checked + label:after {
+		opacity: 1;
+		-webkit-transform: 	scale(1);
+		-moz-transform: 	scale(1);
+		-ms-transform: 		scale(1);
+		transform: 			scale(1);
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: 	all 0.1s ease-in-out;
+		-ms-transition: 	all 0.1s ease-in-out;
+		transition: 		all 0.1s ease-in-out;
+	}
+
+	.field{
+		position: relative;
+		display: block;
+		margin-bottom: 1.25rem;
+		
+		&.valid{
+
+			&:before{
+				content: '';
+				width: 17px;
+				height: 11px;
+				border-bottom: 3px solid $green;
+				border-left: 3px solid $green;
+				position: absolute;
+				top: 12px;
+				right: 1.25rem;
+
+				@include rotate(-45deg);
+			}
+
+			input{
+				padding-right: 3rem;
+			}
+		}
+
+		&.not-valid {
+
+			&:before,
+			&:after {
+				content: '';
+				width: 20px;
+				height: 3px;
+				background-color: $red;
+				position: absolute;
+				top: 18px;
+				right: 1rem;
+			}
+
+			&:before{@include rotate(-45deg);}
+			&:after{@include rotate(45deg);}
+
+			input{
+				padding-right: 3rem;
+			}
+
+			.error{
+				display: block;
+				width: 100%;
+				max-width: 15rem;
+				z-index: 1;
+				color: $white;
+				background-color: rgba(0,0,0,0.85);
+				position: absolute;
+				left: 106%;
+				top: 50%;
+				opacity: 0;
+				visibility: hidden;
+				font-size: 0.875rem;
+				padding: 0.75rem 1.25rem;
+				line-height: 1.25rem;
+				border-radius: 5px;
+
+				@include translate(20px,-50%,0);
+
+				-webkit-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
+				-moz-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
+				-ms-transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
+				transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+				&:before{
+					content: '';
+					width: 10px;
+					height: 10px;
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 100%;
+					border: 10px solid transparent;
+					border-right: 10px solid rgba(0,0,0,0.85);
+
+					@include translate(0,-50%,0);
+				}
+			}
+
+			&:hover .error{
+				left: 104%;
+				opacity: 1;
+				visibility: visible;
+				@include translate(0,-50%,0);
+			}
+		}
+
+		input{
+			margin-bottom: 0;
+		}
 	}
 }
 
